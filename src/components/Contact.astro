@@ -1,4 +1,10 @@
 ---
+import { Mail, Linkedin } from 'lucide-astro';
+
+const contactLinks = [
+  { icon: Mail, label: 'Email', value: 'hello@ciphercloudstudio.com', href: 'mailto:hello@ciphercloudstudio.com' },
+  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/jmmahaguay', href: '#' },
+];
 ---
 
 <section id="contact" class="section-padding border-t border-slate-800/50">
@@ -15,13 +21,10 @@
         </p>
 
         <div class="space-y-4">
-          {[
-            { icon: '📧', label: 'Email', value: 'hello@ciphercloudstudio.com', href: 'mailto:hello@ciphercloudstudio.com' },
-            { icon: '🌐', label: 'LinkedIn', value: 'linkedin.com/in/jmmahaguay', href: '#' },
-          ].map(item => (
+          {contactLinks.map(item => (
             <a href={item.href} class="flex items-center gap-4 group">
-              <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-lg group-hover:border-brand-500/50 transition-colors">
-                {item.icon}
+              <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center group-hover:border-brand-500/50 transition-colors">
+                <item.icon size={18} class="text-slate-400 group-hover:text-brand-400 transition-colors" />
               </div>
               <div>
                 <p class="text-slate-500 text-xs">{item.label}</p>

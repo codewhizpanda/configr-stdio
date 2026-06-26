@@ -12,7 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.6.5"
+    "astro": "^3.6.5",
+    "lucide-astro": "^0.556.0"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.5",

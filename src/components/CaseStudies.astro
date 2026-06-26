@@ -1,4 +1,6 @@
 ---
+import { MoveRight } from 'lucide-astro';
+
 const cases = [
   {
     tag: 'Sales Cloud',
@@ -67,7 +69,7 @@ const cases = [
               <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
                 {c.metrics.map(m => (
                   <div class="flex items-center gap-3">
-                    <span class="text-brand-500 text-lg">→</span>
+                    <MoveRight size={16} class="text-brand-500 shrink-0" />
                     <span class="text-white font-medium">{m}</span>
                   </div>
                 ))}

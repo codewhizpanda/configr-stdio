@@ -1,24 +1,32 @@
 ---
+import { ShieldCheck, Blocks, Code2 } from 'lucide-astro';
+
 const certs = [
   {
     name: 'Salesforce Certified Administrator',
     abbr: 'Admin',
     color: 'from-sky-500 to-blue-600',
-    icon: '🛡️',
+    iconColor: 'text-sky-400',
+    bgColor: 'bg-sky-900/30 border-sky-500/20',
+    icon: ShieldCheck,
     desc: 'Core platform configuration, user management, security, and automation.',
   },
   {
     name: 'Salesforce Certified Platform App Builder',
     abbr: 'App Builder',
     color: 'from-violet-500 to-purple-600',
-    icon: '🏗️',
+    iconColor: 'text-violet-400',
+    bgColor: 'bg-violet-900/30 border-violet-500/20',
+    icon: Blocks,
     desc: 'Custom apps, data modeling, declarative automation, and UI customization.',
   },
   {
     name: 'Salesforce Certified Platform Developer I',
     abbr: 'Dev I',
     color: 'from-emerald-500 to-teal-600',
-    icon: '💻',
+    iconColor: 'text-emerald-400',
+    bgColor: 'bg-emerald-900/30 border-emerald-500/20',
+    icon: Code2,
     desc: 'Apex, Visualforce, SOQL, and programmatic customization of the Salesforce platform.',
   },
 ];
@@ -38,7 +46,9 @@ const certs = [
       {certs.map(cert => (
         <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center overflow-hidden group hover:border-slate-600 transition-all duration-300">
           <div class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${cert.color}`}></div>
-          <div class="text-4xl mb-4">{cert.icon}</div>
+          <div class={`w-14 h-14 mx-auto rounded-2xl border flex items-center justify-center mb-5 ${cert.bgColor}`}>
+            <cert.icon size={26} class={cert.iconColor} />
+          </div>
           <div class={`inline-block bg-gradient-to-r ${cert.color} text-white text-xs font-bold px-3 py-1 rounded-full mb-4`}>
             {cert.abbr}
           </div>
