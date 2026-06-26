@@ -1,0 +1,81 @@
+---
+const cases = [
+  {
+    tag: 'Sales Cloud',
+    title: 'CRM consolidation for a regional real estate firm',
+    problem: 'Agents were tracking leads in spreadsheets and email threads. No visibility into pipeline, deals falling through the cracks.',
+    solution: 'Implemented Sales Cloud with custom lead routing flows, opportunity stages aligned to their sales process, and automated follow-up reminders.',
+    result: 'Pipeline visibility went from zero to real-time. The sales manager now runs weekly reviews in Salesforce instead of chasing down spreadsheets.',
+    metrics: ['100% pipeline visibility', 'Lead response time ↓ 60%', 'Team adopted in week 1'],
+  },
+  {
+    tag: 'Service Cloud',
+    title: 'Support ticket system for a growing SaaS company',
+    problem: 'Customer support was handled through a shared email inbox. No SLAs, no routing, no reporting — and a frustrated team.',
+    solution: 'Deployed Service Cloud with case auto-assignment rules, escalation workflows, and a knowledge base for common issues.',
+    result: 'Ticket resolution time dropped in the first month. The support team finally had the tooling to match their growth.',
+    metrics: ['Resolution time ↓ 40%', 'CSAT improved significantly', 'Zero dropped tickets'],
+  },
+  {
+    tag: 'Data Migration',
+    title: 'Legacy CRM to Salesforce migration for a consulting firm',
+    problem: '5 years of client data in an aging CRM with duplicates, inconsistent formatting, and no clear ownership model.',
+    solution: 'Audited and cleaned 8,000+ records, designed a new data model, and executed a phased migration with zero business disruption.',
+    result: 'Clean, deduplicated Salesforce org from day one. The team trusted the data — which meant they actually used the system.',
+    metrics: ['8,000+ records migrated', 'Duplicate rate < 2%', 'Zero downtime cutover'],
+  },
+];
+---
+
+<section id="case-studies" class="section-padding border-t border-slate-800/50">
+  <div class="container-max">
+    <div class="mb-14">
+      <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Case Studies</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Problems solved</h2>
+      <p class="text-slate-400 text-lg max-w-2xl">
+        Real projects, real outcomes. Details anonymized to protect client confidentiality.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {cases.map((c, i) => (
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-slate-700 transition-all duration-300">
+          <div class="flex flex-col lg:flex-row lg:gap-12">
+            <div class="lg:w-2/3">
+              <span class="inline-block bg-brand-900/50 border border-brand-500/30 text-brand-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                {c.tag}
+              </span>
+              <h3 class="text-2xl font-bold text-white mb-6">{c.title}</h3>
+
+              <div class="space-y-4">
+                <div>
+                  <p class="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">Problem</p>
+                  <p class="text-slate-300">{c.problem}</p>
+                </div>
+                <div>
+                  <p class="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">What I did</p>
+                  <p class="text-slate-300">{c.solution}</p>
+                </div>
+                <div>
+                  <p class="text-slate-500 text-xs uppercase tracking-widest font-semibold mb-1">Result</p>
+                  <p class="text-slate-300">{c.result}</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:w-1/3 mt-8 lg:mt-0 flex flex-col justify-center">
+              <div class="bg-slate-950 border border-slate-800 rounded-xl p-6 space-y-4">
+                {c.metrics.map(m => (
+                  <div class="flex items-center gap-3">
+                    <span class="text-brand-500 text-lg">→</span>
+                    <span class="text-white font-medium">{m}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+---
+const certs = [
+  {
+    name: 'Salesforce Certified Administrator',
+    abbr: 'Admin',
+    color: 'from-sky-500 to-blue-600',
+    icon: '🛡️',
+    desc: 'Core platform configuration, user management, security, and automation.',
+  },
+  {
+    name: 'Salesforce Certified Platform App Builder',
+    abbr: 'App Builder',
+    color: 'from-violet-500 to-purple-600',
+    icon: '🏗️',
+    desc: 'Custom apps, data modeling, declarative automation, and UI customization.',
+  },
+  {
+    name: 'Salesforce Certified Platform Developer I',
+    abbr: 'Dev I',
+    color: 'from-emerald-500 to-teal-600',
+    icon: '💻',
+    desc: 'Apex, Visualforce, SOQL, and programmatic customization of the Salesforce platform.',
+  },
+];
+---
+
+<section id="certifications" class="section-padding border-t border-slate-800/50">
+  <div class="container-max">
+    <div class="mb-14 text-center">
+      <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Credentials</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Salesforce Certified</h2>
+      <p class="text-slate-400 text-lg max-w-xl mx-auto">
+        Three active certifications spanning administration, development, and declarative building.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {certs.map(cert => (
+        <div class="relative bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center overflow-hidden group hover:border-slate-600 transition-all duration-300">
+          <div class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${cert.color}`}></div>
+          <div class="text-4xl mb-4">{cert.icon}</div>
+          <div class={`inline-block bg-gradient-to-r ${cert.color} text-white text-xs font-bold px-3 py-1 rounded-full mb-4`}>
+            {cert.abbr}
+          </div>
+          <h3 class="text-white font-bold text-lg mb-3 leading-snug">{cert.name}</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">{cert.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-slate-500 text-sm mt-8">
+      Verified on <a href="https://trailhead.salesforce.com" target="_blank" rel="noopener" class="text-brand-400 hover:underline">Salesforce Trailhead</a>
+    </p>
+  </div>
+</section>

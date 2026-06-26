@@ -1,0 +1,95 @@
+---
+---
+
+<section id="contact" class="section-padding border-t border-slate-800/50">
+  <div class="container-max">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div>
+        <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Contact</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Let's talk about<br />your project.
+        </h2>
+        <p class="text-slate-400 text-lg leading-relaxed mb-8">
+          Tell me what you're working with and what you need. I'll respond within one business day
+          with honest feedback and next steps — no sales call required.
+        </p>
+
+        <div class="space-y-4">
+          {[
+            { icon: '📧', label: 'Email', value: 'hello@ciphercloudstudio.com', href: 'mailto:hello@ciphercloudstudio.com' },
+            { icon: '🌐', label: 'LinkedIn', value: 'linkedin.com/in/jmmahaguay', href: '#' },
+          ].map(item => (
+            <a href={item.href} class="flex items-center gap-4 group">
+              <div class="w-10 h-10 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center text-lg group-hover:border-brand-500/50 transition-colors">
+                {item.icon}
+              </div>
+              <div>
+                <p class="text-slate-500 text-xs">{item.label}</p>
+                <p class="text-white font-medium group-hover:text-brand-400 transition-colors">{item.value}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+        <form class="space-y-5" name="contact" method="POST" data-netlify="true">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-slate-400 text-sm font-medium mb-2" for="name">Your name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Jane Smith"
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-slate-400 text-sm font-medium mb-2" for="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Acme Corp"
+                class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-slate-400 text-sm font-medium mb-2" for="email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="jane@acmecorp.com"
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors"
+            />
+          </div>
+
+          <div>
+            <label class="block text-slate-400 text-sm font-medium mb-2" for="need">What do you need?</label>
+            <textarea
+              id="need"
+              name="need"
+              required
+              rows="4"
+              placeholder="Tell me about your current Salesforce situation and what you're trying to achieve..."
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-brand-600/25"
+          >
+            Send inquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
