@@ -1,0 +1,63 @@
+---
+import { Building2, ShieldCheck, Cpu, Gamepad2, Hotel, Scale } from 'lucide-astro';
+
+const industries = [
+  {
+    icon: Building2,
+    name: 'Real Estate',
+    description: 'Property developers and agencies managing complex sales pipelines, agent networks, and buyer journeys.',
+  },
+  {
+    icon: ShieldCheck,
+    name: 'Insurance & Financial Services',
+    description: 'Regulated environments requiring compliant CRM processes, advisor management, and policy lifecycle tracking.',
+  },
+  {
+    icon: Cpu,
+    name: 'Technology & IT Services',
+    description: 'Fast-moving tech companies needing scalable sales and support infrastructure that keeps up with growth.',
+  },
+  {
+    icon: Gamepad2,
+    name: 'Gaming & Entertainment',
+    description: 'High-volume customer operations and partner management in a competitive, customer-first industry.',
+  },
+  {
+    icon: Hotel,
+    name: 'Hospitality & Luxury',
+    description: 'Guest experience platforms, loyalty programmes, and operational workflows for premium hospitality brands.',
+  },
+  {
+    icon: Scale,
+    name: 'Legal & Professional Services',
+    description: 'Client relationship management and matter tracking for firms that run on relationships and reputation.',
+  },
+];
+---
+
+<section id="industries" class="section-padding border-t border-neutral-800/50">
+  <div class="container-max">
+    <div class="mb-14">
+      <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Industries</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Sectors I've worked in</h2>
+      <p class="text-slate-400 text-lg max-w-2xl">
+        Every industry has its own quirks, compliance requirements, and client expectations.
+        I've delivered Salesforce across six of them.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {industries.map((industry) => (
+        <div class="flex gap-4 bg-neutral-900 border border-neutral-800 rounded-2xl p-6 hover:border-brand-500/30 transition-all duration-300 group">
+          <div class="w-10 h-10 bg-brand-900/50 border border-brand-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand-900 group-hover:border-brand-500/40 transition-all">
+            <industry.icon size={20} class="text-brand-400" />
+          </div>
+          <div>
+            <h3 class="text-white font-bold mb-1.5 group-hover:text-brand-400 transition-colors">{industry.name}</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">{industry.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
