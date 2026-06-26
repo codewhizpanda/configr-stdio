@@ -34,7 +34,7 @@ const certs = [
 
 <section id="certifications" class="section-padding border-t border-neutral-800/50">
   <div class="container-max">
-    <div class="mb-14 text-center">
+    <div class="reveal mb-14 text-center">
       <p class="text-brand-500 font-semibold text-sm uppercase tracking-widest mb-3">Credentials</p>
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Salesforce Certified</h2>
       <p class="text-slate-400 text-lg max-w-xl mx-auto">
@@ -44,7 +44,7 @@ const certs = [
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {certs.map(cert => (
-        <div class="relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 text-center overflow-hidden group hover:border-slate-600 transition-all duration-300">
+        <div class="reveal relative bg-neutral-900 border border-neutral-800 rounded-2xl p-8 text-center overflow-hidden group hover:border-slate-600 transition-all duration-300">
           <div class={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${cert.color}`}></div>
           <div class={`w-14 h-14 mx-auto rounded-2xl border flex items-center justify-center mb-5 ${cert.bgColor}`}>
             <cert.icon size={26} class={cert.iconColor} />

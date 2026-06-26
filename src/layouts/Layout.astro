@@ -21,6 +21,22 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.reveal, .reveal-left').forEach((el) => observer.observe(el));
+    });
+  </script>
   <body>
     <slot />
   </body>
