@@ -1,9 +1,8 @@
 ---
-import { Mail, Linkedin } from 'lucide-astro';
+import { Mail } from 'lucide-astro';
 
 const contactLinks = [
   { icon: Mail, label: 'Email', value: 'hello@ciphercloudstudio.com', href: 'mailto:hello@ciphercloudstudio.com' },
-  { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/jmmahaguay', href: '#' },
 ];
 ---
 
@@ -16,7 +15,7 @@ const contactLinks = [
           Let's talk about<br />your project.
         </h2>
         <p class="text-slate-400 text-lg leading-relaxed mb-8">
-          Tell me what you're working with and what you need. I'll respond within one business day
+          Tell us what you're working with and what you need. We'll respond within one business day
           with honest feedback and next steps — no sales call required.
         </p>
 
@@ -80,7 +79,7 @@ const contactLinks = [
               name="need"
               required
               rows="4"
-              placeholder="Tell me about your current Salesforce situation and what you're trying to achieve..."
+              placeholder="Tell us about your current Salesforce situation and what you're trying to achieve..."
               class="w-full bg-neutral-950 border border-neutral-700 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors resize-none"
             ></textarea>
           </div>

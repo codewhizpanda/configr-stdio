@@ -4,12 +4,48 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  type?: 'website' | 'article';
+  publishDate?: string;
+  author?: string;
 }
 
 const {
   title = 'CipherCloud Studio — Salesforce Consulting',
-  description = 'CipherCloud Studio is a Salesforce consulting practice helping SMBs implement, customize, and actually use their Salesforce investment.',
+  description = 'CipherCloud Studio helps small and mid-sized businesses go live on Salesforce — and stay live. No drawn-out projects. No surprise complexity.',
+  ogImage = '/ciphercloud-studio.png',
+  type = 'website',
+  publishDate,
+  author = 'CipherCloud Studio',
 } = Astro.props;
+
+const siteUrl = 'https://ciphercloudstudio.com';
+const canonicalUrl = Astro.props.canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const jsonLd = type === 'article' ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: author },
+  publisher: {
+    '@type': 'Organization',
+    name: 'CipherCloud Studio',
+    url: siteUrl,
+  },
+  datePublished: publishDate,
+  image: ogImageUrl,
+  url: canonicalUrl,
+}) : JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'CipherCloud Studio',
+  description,
+  url: siteUrl,
+  serviceType: 'Salesforce Consulting',
+});
 ---
 
 <!doctype html>
@@ -17,9 +53,32 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="CipherCloud Studio" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/ciphercloud-studio.png" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" set:html={jsonLd} />
   </head>
   <script>
     const observer = new IntersectionObserver(
@@ -39,5 +98,7 @@ const {
   </script>
   <body>
     <slot />
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
   </body>
 </html>
