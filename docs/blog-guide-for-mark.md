@@ -1,6 +1,6 @@
-# Blog Writing Guide — CipherCloud Studio
+# Blog Writing Guide — Configr Stdio
 
-This guide covers everything you need to write and publish a blog post on the CipherCloud Studio site. No coding knowledge required.
+This guide covers everything you need to write and publish a blog post on the Configr Stdio site. No coding knowledge required.
 
 ---
 

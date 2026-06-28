@@ -12,12 +12,12 @@ interface Props {
 }
 
 const {
-  title = 'CipherCloud Studio — Salesforce Consulting',
-  description = 'CipherCloud Studio helps small and mid-sized businesses go live on Salesforce — and stay live. No drawn-out projects. No surprise complexity.',
+  title = 'Configr Stdio — Salesforce Consulting',
+  description = 'Configr Stdio helps small and mid-sized businesses go live on Salesforce — and stay live. No drawn-out projects. No surprise complexity.',
   ogImage = '/ciphercloud-studio.png',
   type = 'website',
   publishDate,
-  author = 'CipherCloud Studio',
+  author = 'Configr Stdio',
 } = Astro.props;
 
 const siteUrl = 'https://ciphercloudstudio.com';
@@ -32,7 +32,7 @@ const jsonLd = type === 'article' ? JSON.stringify({
   author: { '@type': 'Person', name: author },
   publisher: {
     '@type': 'Organization',
-    name: 'CipherCloud Studio',
+    name: 'Configr Stdio',
     url: siteUrl,
   },
   datePublished: publishDate,
@@ -41,7 +41,7 @@ const jsonLd = type === 'article' ? JSON.stringify({
 }) : JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'CipherCloud Studio',
+  name: 'Configr Stdio',
   description,
   url: siteUrl,
   serviceType: 'Salesforce Consulting',
@@ -66,7 +66,7 @@ const jsonLd = type === 'article' ? JSON.stringify({
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:site_name" content="CipherCloud Studio" />
+    <meta property="og:site_name" content="Configr Stdio" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
