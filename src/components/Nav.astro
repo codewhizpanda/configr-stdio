@@ -22,12 +22,12 @@ const navLinks = [
     </a>
 
     <!-- Desktop nav -->
-    <ul class="hidden md:flex items-center gap-5 ml-auto mr-6">
+    <ul class="hidden md:flex items-center gap-4 ml-auto mr-4">
       {navLinks.map(link => (
         <li>
           <a
             href={link.href}
-            class="text-slate-400 hover:text-white text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+            class="text-slate-400 hover:text-white text-xs font-medium transition-colors duration-200 whitespace-nowrap"
           >
             {link.label}
           </a>
