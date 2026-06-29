@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ciphercloudstudio.com',
+  site: 'https://configrstdio.com',
   integrations: [tailwind(), sitemap()],
 });

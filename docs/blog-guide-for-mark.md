@@ -1,6 +1,6 @@
-# Blog Writing Guide — CipherCloud Studio
+# Blog Writing Guide — Configr Stdio
 
-This guide covers everything you need to write and publish a blog post on the CipherCloud Studio site. No coding knowledge required.
+This guide covers everything you need to write and publish a blog post on the Configr Stdio site. No coding knowledge required.
 
 ---
 
@@ -21,7 +21,7 @@ The filename = the URL. Keep it lowercase, words separated by hyphens, no spaces
 
 ```
 src/content/blog/5-salesforce-mistakes-smbs-make.md
-→ ciphercloudstudio.com/blog/5-salesforce-mistakes-smbs-make
+→ configrstdio.com/blog/5-salesforce-mistakes-smbs-make
 ```
 
 ---
